@@ -6,7 +6,7 @@ function nameVal (name) {
     const UnScores = nameToArr.filter((el) => el.includes("_"))
 
     if (nameLength <= 3 || isSpace || UnScores.length >=2) {
-        console.log('idi na huy');
+        console.log('wrong!!');
     } else {
         console.log(name);
     }
@@ -36,7 +36,7 @@ validateName = (inputName) => {
 
     lengthCheck(iLength)
     spaceCheck(iSpace)
-    underScoreCheck(iUnderScore)
+    underscoreCheck(iUnderScore)
 }
 
 lengthCheck = (iLength) => {
@@ -47,17 +47,12 @@ lengthCheck = (iLength) => {
 
 spaceCheck = (iSpace) => {
     if (iSpace.includes(" ")) {
-        validator.textContent = 'Name has space character'
+        // validator.textContent = 'Name has space character'
+        validator.innerHTML = `name has space char`
     }
 }
 
-spaceCheck = (iSpace) => {
-    if (iSpace.includes(" ")) {
-        validator.textContent = 'Name has space character'
-    }
-}
-
-underScoreCheck = (iUnderScore) => {
+underscoreCheck = (iUnderScore) => {
     const toArr = iUnderScore.split("")
     const count = toArr.filter((el) => el.includes("_"))
 
