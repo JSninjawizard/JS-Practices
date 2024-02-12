@@ -41,14 +41,13 @@ validateName = (inputName) => {
 
 lengthCheck = (iLength) => {
     if (iLength <= 3) {
-        validator.textContent = 'Name too short'
-    }
+        return validator.textContent = 'Name is too short'
+    } 
 }
 
 spaceCheck = (iSpace) => {
     if (iSpace.includes(" ")) {
-        // validator.textContent = 'Name has space character'
-        validator.innerHTML = `name has space char`
+        return validator.textContent = 'Name has space character'
     }
 }
 
@@ -57,6 +56,6 @@ underscoreCheck = (iUnderScore) => {
     const count = toArr.filter((el) => el.includes("_"))
 
     if (count.length >= 2) {
-        validator.textContent = "Name has more than 2 underscore characters"
+        return validator.textContent = "Name has more than 2 underscore characters"
     }
 }
