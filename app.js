@@ -2,9 +2,6 @@ const input = document.querySelector("input");
 const btn = document.querySelector("button");
 const validator = document.querySelector("h5");
 
-let validate1 = "";
-let validate2 = "";
-let validate3 = "";
 validator.textContent = "";
 
 btn.addEventListener("click", function () {
@@ -14,24 +11,8 @@ btn.addEventListener("click", function () {
   let isSpace = isHasSpace(inputName);
   let isUnderScore = isHasUnderScore(inputName);
 
-  validation(isLong, isSpace, isUnderScore)
-  
-//   if (isLong) {
-//     validate1 = "input is long enough";
-//   } else {
-//     validate1 = "too short";
-//   }
-//   if (isSpace) {
-//     validate2 = "input has no space";
-//   } else {
-//     validate2 = `has space!`;
-//   }
-//   if (!isUnderScore) {
-//     validate3 = "input has more than 1 undersoce";
-//   } else {
-//     validate3 = `has  less than 2 underscore!`;
-//   }
-//   validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
+  validation(isLong, isSpace, isUnderScore);
+    reset()
 });
 
 isLongEnough = (input) => {
@@ -39,14 +20,12 @@ isLongEnough = (input) => {
     console.log(input);
     return false;
   } else return true;
-
 };
 
 isHasSpace = (input) => {
   if (input.includes(" ")) {
     return false;
   } else return true;
-
 };
 
 isHasUnderScore = (input) => {
@@ -55,33 +34,50 @@ isHasUnderScore = (input) => {
   if (numberOfUnderScores <= 1) {
     return true;
   } else return false;
-
 };
 
-const validation = (length, space, underscore,) => {
+const validation = (length, space, underscore) => {
+  if (length) {
+    const span1 = document.createElement("span");
+    const text1 = document.createTextNode("Correct, ");
+    span1.appendChild(text1);
+    validator.appendChild(span1);
+    span1.classList.add("correct");
+  } else {
+    const span1 = document.createElement("span");
+    const text1 = document.createTextNode("Too short, ");
+    span1.appendChild(text1);
+    validator.appendChild(span1);
+    span1.classList.add("wrong");
+  }
+//   if (space) {
+//     const span2 = document.createElement("span");
+//     const text2 = document.createTextNode("No spaces detected, ");
+//     span2.appendChild(text2);
+//     validator.appendChild(span2);
+//     span2.classList.add("correct");
+//   } else {
+//     const span2 = document.createElement("span");
+//     const text2 = document.createTextNode("You used space, ");
+//     span2.appendChild(text2);
+//     validator.appendChild(span2);
+//     span2.classList.add("wrong");
+//   }
+//   if (!underscore) {
+//     const span3 = document.createElement("span");
+//     const text3 = document.createTextNode("underscore count > 1");
+//     span3.appendChild(text3);
+//     validator.appendChild(span3);
+//     span3.classList.add("wrong");
+//   } else {
+//     const span3 = document.createElement("span");
+//     const text3 = document.createTextNode("Underscore count < 1");
+//     span3.appendChild(text3);
+//     validator.appendChild(span3);
+//     span3.classList.add("correct");
+//   }
+};
 
-    if (length) {
-        const span1 = document.createElement("span")
-        console.log(span1);
-        const text1 = document.createTextNode("Correct")
-        console.log(text1);
-            // validate1 = "input is long enough";
-            span1.appendChild(text1)
-            validator.appendChild(span1)
-            span1.classList.add("correct")
-            
-          } else {
-            validate1 = "too short";
-          }
-        //   if (space) {
-        //     validate2 = "input has no space";
-        //   } else {
-        //     validate2 = `has space!`;
-        //   }
-        //   if (!underscore) {
-        //     validate3 = "input has more than 1 undersoce";
-        //   } else {
-        //     validate3 = `has  less than 2 underscore!`;
-        //   }
-        //   validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
+const reset = () =>{
+    input.value = ""
 }
