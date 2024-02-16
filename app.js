@@ -14,22 +14,24 @@ btn.addEventListener("click", function () {
   let isSpace = isHasSpace(inputName);
   let isUnderScore = isHasUnderScore(inputName);
 
-  if (isLong) {
-    validate1 = "input is long enough";
-  } else {
-    validate1 = "too short";
-  }
-  if (isSpace) {
-    validate2 = "input has no space";
-  } else {
-    validate2 = `has space!`;
-  }
-  if (!isUnderScore) {
-    validate3 = "input has more than 1 undersoce";
-  } else {
-    validate3 = `has  less than 2 underscore!`;
-  }
-  validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
+  validation(isLong, isSpace, isUnderScore)
+  
+//   if (isLong) {
+//     validate1 = "input is long enough";
+//   } else {
+//     validate1 = "too short";
+//   }
+//   if (isSpace) {
+//     validate2 = "input has no space";
+//   } else {
+//     validate2 = `has space!`;
+//   }
+//   if (!isUnderScore) {
+//     validate3 = "input has more than 1 undersoce";
+//   } else {
+//     validate3 = `has  less than 2 underscore!`;
+//   }
+//   validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
 });
 
 isLongEnough = (input) => {
@@ -56,4 +58,22 @@ isHasUnderScore = (input) => {
 
 };
 
+const validation = (length, space, underscore,) => {
 
+    if (length) {
+            validate1 = "input is long enough";
+          } else {
+            validate1 = "too short";
+          }
+          if (space) {
+            validate2 = "input has no space";
+          } else {
+            validate2 = `has space!`;
+          }
+          if (!underscore) {
+            validate3 = "input has more than 1 undersoce";
+          } else {
+            validate3 = `has  less than 2 underscore!`;
+          }
+          validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
+}
