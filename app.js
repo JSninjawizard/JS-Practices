@@ -61,19 +61,27 @@ isHasUnderScore = (input) => {
 const validation = (length, space, underscore,) => {
 
     if (length) {
-            validate1 = "input is long enough";
+        const span1 = document.createElement("span")
+        console.log(span1);
+        const text1 = document.createTextNode("Correct")
+        console.log(text1);
+            // validate1 = "input is long enough";
+            span1.appendChild(text1)
+            validator.appendChild(span1)
+            span1.classList.add("correct")
+            
           } else {
             validate1 = "too short";
           }
-          if (space) {
-            validate2 = "input has no space";
-          } else {
-            validate2 = `has space!`;
-          }
-          if (!underscore) {
-            validate3 = "input has more than 1 undersoce";
-          } else {
-            validate3 = `has  less than 2 underscore!`;
-          }
-          validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
+        //   if (space) {
+        //     validate2 = "input has no space";
+        //   } else {
+        //     validate2 = `has space!`;
+        //   }
+        //   if (!underscore) {
+        //     validate3 = "input has more than 1 undersoce";
+        //   } else {
+        //     validate3 = `has  less than 2 underscore!`;
+        //   }
+        //   validator.textContent = `${validate1}, ${validate2}, ${validate3}`;
 }
