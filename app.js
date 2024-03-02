@@ -6,6 +6,48 @@ const ordered = document.querySelector("ul");
 validator.textContent = "";
 let arrayOfAnswers = []
 
+//! -<test
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const inputName = input.value;
+
+        const inputLength = strLength(inputName)
+        const hasSpace = strSpace(inputName)
+        const hasUnderscore = strUnderscore(inputName)
+        
+        val(inputLength, hasSpace, hasUnderscore)
+        
+        arrayOfAnswers = []
+        arrayOfAnswers.push(inputLength, hasSpace, hasUnderscore)
+        
+        for (const el of arrayOfAnswers) {
+            const listItem = document.createElement("li")
+            listItem.textContent = el
+            ordered.appendChild(listItem)
+            console.log(ordered);
+            console.log(ordered.appendChild(listItem));
+            if (listItem.textContent.includes("at least 3")) {
+                listItem.classList.add('correct')
+            }
+            if (listItem.textContent.includes("too short")) {
+                listItem.classList.add('wrong')
+            } 
+            if (listItem.textContent.includes("String has no spaces")) {
+                listItem.classList.add('correct')
+            }
+            if (listItem.textContent.includes("Number of spaces:")) {
+                listItem.classList.add('wrong')
+            } 
+            if (listItem.textContent.includes("Number of underscores:")) {
+                listItem.classList.add('wrong')
+            } 
+            if (listItem.textContent.includes("String has allowed number of underscores")) {
+                listItem.classList.add('correct')
+            } 
+        }
+    } 
+})
+//! -<test
 
 btn.addEventListener("click", function () {
   const inputName = input.value;
@@ -16,13 +58,19 @@ const hasUnderscore = strUnderscore(inputName)
 
 val(inputLength, hasSpace, hasUnderscore)
 
+//<-=  reset
 arrayOfAnswers = []
+input.value = ""
+//<-=  reset
+
 arrayOfAnswers.push(inputLength, hasSpace, hasUnderscore)
 
 for (const el of arrayOfAnswers) {
     const listItem = document.createElement("li")
     listItem.textContent = el
     ordered.appendChild(listItem)
+
+
     if (listItem.textContent.includes("at least 3")) {
         listItem.classList.add('correct')
     }
@@ -42,16 +90,6 @@ for (const el of arrayOfAnswers) {
         listItem.classList.add('correct')
     } 
 }
-
-// const orderedList = document.createElement("ol")
-// const listItem = document.createElement("li")
-// for (const el of arrayOfAnswers) {
-//     console.log(el);
-//     listItem.textContent = el
-//     orderedList.appendChild(listItem)
-//     validator.appendChild(orderedList)  
-
-// }
     
 
 });
