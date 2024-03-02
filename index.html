@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Username Validation</h1>
-    <h3>
-        <ol>
-            <li>Only one underscore - ("_")</li>
-            <li>No spaces - (" ")</li>
-            <li>Name to be longer than 3 chars</li>
-        </ol>
-    </h3>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <h1 class="title">Username Validation</h1>
+        <div class="subtitle">
+          <h3>
+            <ol>
+              <li>Only one underscore - ("_")</li>
+              <li>No spaces - (" ")</li>
+              <li>Name to be longer than 3 chars</li>
+            </ol>
+          </h3>
+        </div>
+        <div class="input">
+          <input class="input__textbox" type="text" />
+          <button class="input__btn">validate</button>
+        </div>
+      </div>
 
-    <input type="text">
-    <button>validate</button>
-    <h5>correct</h5>
-    <ul></ul>
-    
+      <div class="right-side">
+        <h5>correct</h5>
+        <ul></ul>
+      </div>
+
+    </div>
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

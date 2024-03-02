@@ -1,1 +1,22 @@
-@import "_1.header"
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    // background: rgb(2,0,36);
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,45,111,1) 0%, rgba(0,212,255,1) 100%);
+
+    background-color: #3148ad;
+}
+
+@import "_1.main";
+@import "_2.left-side";
+@import "_3.right-side";
