@@ -61,6 +61,7 @@ val(inputLength, hasSpace, hasUnderscore)
 //<-=  reset
 arrayOfAnswers = []
 input.value = ""
+ordered.innerHTML =""
 //<-=  reset
 
 arrayOfAnswers.push(inputLength, hasSpace, hasUnderscore)

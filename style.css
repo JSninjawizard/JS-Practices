@@ -71,4 +71,14 @@ body {
   justify-content: center;
   align-items: center;
   width: 50%;
+}
+
+.correct {
+  font-size: 2rem;
+  color: green;
+}
+
+.wrong {
+  font-size: 2rem;
+  color: red;
 }/*# sourceMappingURL=style.css.map */
