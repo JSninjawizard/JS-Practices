@@ -81,4 +81,15 @@ body {
 .wrong {
   font-size: 2rem;
   color: red;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+}
+
+.separator__line {
+  width: 2px;
+  height: 80%;
+  background-color: #3148ad;
 }/*# sourceMappingURL=style.css.map */

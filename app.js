@@ -16,7 +16,12 @@ input.addEventListener('keydown', (event) => {
         const hasUnderscore = strUnderscore(inputName)
         
         val(inputLength, hasSpace, hasUnderscore)
-        
+        //<-=  reset
+        arrayOfAnswers = []
+        input.value = ""
+        ordered.innerHTML =""
+        //<-=  reset
+
         arrayOfAnswers = []
         arrayOfAnswers.push(inputLength, hasSpace, hasUnderscore)
         
